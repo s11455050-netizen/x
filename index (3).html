@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>激素救援中心｜人體失控大作戰</title>
+<style>
+:root{--ink:#203047;--muted:#64748b;--paper:#f5f8ff;--blue:#3867d6;--purple:#7954c8;--teal:#159b91;--orange:#ef9b36;--red:#d95365;--green:#229b68;--line:#e3eaf5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 5%,#e4edff 0,transparent 32%),radial-gradient(circle at 95% 15%,#f1e8ff 0,transparent 28%),var(--paper);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);min-height:100vh}
+button{font:inherit;cursor:pointer;border:0}.app{max-width:980px;margin:auto;padding:22px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.brand{font-weight:900;letter-spacing:.04em}.pill{background:#e8efff;color:#3159ad;border-radius:999px;padding:7px 12px;font-size:.83rem;font-weight:800}
+.hero,.panel{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 12px 35px #304c7b12}.hero{padding:clamp(24px,5vw,48px);text-align:center;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#edf2ff;top:-130px;left:-90px}.hero:after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:#f5edff;right:-80px;bottom:-120px}.hero>*{position:relative;z-index:1}.emoji{font-size:4rem;display:block;margin-bottom:10px}.eyebrow{color:var(--blue);font-weight:900;font-size:.85rem;letter-spacing:.14em}.hero h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.12;margin:10px 0}.hero p{color:var(--muted);line-height:1.8;max-width:650px;margin:12px auto 22px}.btn{background:var(--blue);color:#fff;border-radius:14px;padding:13px 22px;font-weight:900;box-shadow:0 7px 15px #3867d633;transition:.15s}.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.btn.secondary{background:#edf2ff;color:#3159ad;box-shadow:none}.btn.ghost{background:#f3f5fa;color:#536176;box-shadow:none}.btn.small{padding:9px 14px;font-size:.9rem}.row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.mini{background:#f8faff;border:1px solid var(--line);border-radius:17px;padding:16px;text-align:left}.mini b{display:block;margin:5px 0}.mini span{font-size:1.7rem}.mini p{font-size:.9rem;color:var(--muted);line-height:1.55;margin:0}.game{display:none}.game.active{display:block}.hud{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 14px}.hudbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 13px;font-weight:800;font-size:.9rem}.progress{height:9px;background:#e6ebf4;border-radius:99px;overflow:hidden;margin:12px 0 20px}.progress>div{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));width:0;transition:width .3s}.stagehead{display:flex;align-items:center;gap:13px;margin-bottom:15px}.stageicon{width:52px;height:52px;border-radius:16px;background:#edf2ff;display:grid;place-items:center;font-size:1.8rem}.stagehead h2{margin:0;font-size:1.35rem}.stagehead p{margin:3px 0 0;color:var(--muted);font-size:.9rem}.question{padding:clamp(20px,4vw,34px)}.qmeta{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:.88rem;font-weight:800}.qtext{font-size:clamp(1.2rem,3vw,1.65rem);font-weight:900;line-height:1.55;margin:22px 0}.hint{background:#f4f7ff;border-left:4px solid #8ba7ef;padding:12px 14px;border-radius:8px;color:#52627c;line-height:1.6;margin:14px 0}.options{display:grid;gap:10px}.option{width:100%;text-align:left;background:#f8faff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);font-weight:750;line-height:1.5;transition:.12s}.option:hover{border-color:#9db3ef;background:#f2f6ff}.option.selected{border-color:var(--blue);background:#edf2ff}.option.correct{border-color:var(--green);background:#eaf8f0}.option.wrong{border-color:var(--red);background:#fff0f1}.letter{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:#e9eef8;margin-right:9px;font-size:.82rem}.feedback{display:none;margin-top:16px;padding:15px;border-radius:14px;line-height:1.65}.feedback.show{display:block}.feedback.good{background:#eaf8f0;color:#176b48}.feedback.bad{background:#fff1f1;color:#9d3442}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px;flex-wrap:wrap}.timer{font-variant-numeric:tabular-nums;color:var(--orange)}.casegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.case{background:#f8faff;border:1px solid var(--line);border-radius:16px;padding:16px}.case h3{margin:0 0 8px}.case p{color:var(--muted);line-height:1.6;margin:0}.result{text-align:center;padding:34px}.result .big{font-size:4rem}.result h2{font-size:2rem;margin:5px}.score{font-size:2.4rem;font-weight:950;color:var(--blue)}.review{text-align:left;background:#f8faff;border-radius:16px;padding:16px;margin:18px 0}.review li{margin:8px 0;line-height:1.5}.note{color:var(--muted);font-size:.82rem;line-height:1.6;margin-top:18px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#203047;color:white;padding:11px 16px;border-radius:12px;display:none;z-index:5}.toast.show{display:block}@media(max-width:650px){.cards{grid-template-columns:1fr}.casegrid{grid-template-columns:1fr}.top{align-items:flex-start}.actions .btn{flex:1}.hero{border-radius:18px}.question{border-radius:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="brand">🧬 激素救援中心</div><div class="pill">國一自然探究｜第十二堂</div></div>
+  <section id="intro" class="hero">
+    <span class="emoji">🧑‍⚕️</span><div class="eyebrow">HORMONE RESCUE MISSION</div>
+    <h1>人體失控大作戰</h1>
+    <p>警報！人體控制中心出現異常！生長、代謝與血糖系統需要你來拯救。化身人體小小醫師，破解線索、診斷故障，讓身體重新正常運作！</p>
+    <div class="cards">
+      <div class="mini"><span>📏</span><b>生長激素</b><p>掌管身體生長與發育，線索是「長高」。</p></div>
+      <div class="mini"><span>🔥</span><b>甲狀腺素</b><p>調節新陳代謝，線索是「能量使用」。</p></div>
+      <div class="mini"><span>🍬</span><b>胰島素</b><p>幫助細胞利用葡萄糖、降低血糖。</p></div>
+    </div>
+    <p><b>任務時間：約 20～25 分鐘</b>　｜　共 4 大關、24 題</p>
+    <div class="row"><button class="btn" onclick="startGame()">🚀 開始救援任務</button><button class="btn secondary" onclick="showRules()">遊戲規則</button></div>
+    <div id="rules" class="hint" style="display:none;text-align:left;margin:20px auto 0;max-width:650px">每題答對可得 10 分；情境診斷題答對可得 15 分。每題作答後會顯示解析。建議老師讓學生先個別作答，再請學生說明判斷理由。可由老師帶領討論，讓遊戲延伸至 20 分鐘以上。</div>
+    <p class="note">本遊戲為課堂學習活動，不作為疾病診斷工具。</p>
+  </section>
+
+  <section id="game" class="game">
+    <div class="hud">
+      <div class="hudbox">⭐ 得分：<span id="score">0</span></div>
+      <div class="hudbox">📍 關卡：<span id="stageNum">1</span> / 4</div>
+      <div class="hudbox">⏱️ 本題：<span id="timer" class="timer">不限時</span></div>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <div class="stagehead"><div class="stageicon" id="stageIcon">🧩</div><div><h2 id="stageTitle">第一關</h2><p id="stageDesc">激素身分大解密</p></div></div>
+    <div class="panel question">
+      <div class="qmeta"><span id="qCount">第 1 題</span><span id="qTag" class="pill">觀念配對</span></div>
+      <div id="qText" class="qtext"></div>
+      <div id="qHint" class="hint" style="display:none"></div>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback"></div>
+      <div class="actions"><button class="btn ghost" onclick="skipQuestion()">先跳過</button><button id="nextBtn" class="btn" onclick="nextQuestion()" disabled>下一題 →</button></div>
+    </div>
+  </section>
+
+  <section id="result" class="panel result" style="display:none">
+    <div class="big">🏆</div><div class="eyebrow">MISSION COMPLETE</div><h2>人體控制中心修復成功！</h2>
+    <p>小小醫師，你完成了所有救援任務！</p>
+    <div class="score"><span id="finalScore">0</span> 分</div>
+    <p id="rank"></p>
+    <div class="review"><b>🧠 三大激素重點複習</b><ul>
+      <li><b>生長激素：</b>由腦垂腺分泌，促進身體生長發育。</li>
+      <li><b>甲狀腺素：</b>由甲狀腺分泌，調節新陳代謝。</li>
+      <li><b>胰島素：</b>由胰島分泌，幫助細胞利用葡萄糖，使血糖降低。</li>
+    </ul></div>
+    <div class="row"><button class="btn" onclick="restart()">🔁 再玩一次</button><button class="btn secondary" onclick="window.print()">🖨️ 列印成績</button></div>
+    <p class="note">提醒：身體症狀可能有不同原因，不能只靠單一症狀判斷激素是否異常。課堂案例僅用於理解生理功能。</p>
+  </section>
+  <div class="note" style="text-align:center">教學小提醒：每題答完可請學生說出「我從哪個線索判斷」，讓遊戲不只是猜答案。</div>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const stages=[
+{title:"第一關：激素身分大解密",desc:"把激素與功能連起來！",icon:"🧩",tag:"觀念配對",points:10,questions:[
+{q:"哪一種激素能促進身體骨骼及組織生長，幫助我們發育？",o:["甲狀腺素","生長激素","胰島素"],a:1,e:"生長激素能促進骨骼與身體組織生長，與兒童及青少年的生長發育有關。"},
+{q:"主要負責調節身體新陳代謝的是哪一種激素？",o:["胰島素","生長激素","甲狀腺素"],a:2,e:"甲狀腺素能調節新陳代謝，影響身體使用能量的速度。"},
+{q:"吃完飯後血糖上升，哪一種激素能幫助血糖降低？",o:["胰島素","甲狀腺素","生長激素"],a:0,e:"胰島素由胰島分泌，能促進細胞利用葡萄糖，並促進肝臟、肌肉儲存肝糖，使血糖降低。"},
+{q:"生長激素主要由哪個構造分泌？",o:["腦垂腺（腦下垂體）","甲狀腺","胰臟的胰島"],a:0,e:"生長激素由腦垂腺前葉分泌。"},
+{q:"甲狀腺素主要由哪個器官分泌？",o:["胰臟","甲狀腺","腦垂腺"],a:1,e:"甲狀腺位於頸部，會分泌甲狀腺素。"},
+{q:"胰島素主要由哪個構造分泌？",o:["甲狀腺","腦垂腺","胰臟中的胰島"],a:2,e:"胰島位於胰臟中，是分泌胰島素的重要構造。"}
+]},
+{title:"第二關：人體偵探社",desc:"觀察生活線索，找出正在作用的激素！",icon:"🔎",tag:"情境推理",points:10,questions:[
+{q:"小安進入青春期後，身高逐漸增加，骨骼也持續發育。最相關的激素是？",o:["胰島素","生長激素","甲狀腺素"],a:1,e:"身體生長發育與生長激素有關，但身高也受到遺傳、營養及其他因素影響。"},
+{q:"小晴吃完一大碗飯後，血液中的葡萄糖增加。身體會分泌哪種激素協助調節血糖？",o:["甲狀腺素","生長激素","胰島素"],a:2,e:"進食後血糖上升，胰島素分泌增加，幫助細胞利用葡萄糖，使血糖下降。"},
+{q:"小傑身體的新陳代謝受到調節，能正常使用能量。這主要與哪種激素有關？",o:["甲狀腺素","胰島素","生長激素"],a:0,e:"甲狀腺素能調節新陳代謝，影響身體能量利用。"},
+{q:"醫師向家長說明，孩子的生長發育可能與腦垂腺分泌的激素有關。這種激素是？",o:["胰島素","生長激素","甲狀腺素"],a:1,e:"腦垂腺分泌生長激素，能促進身體生長。"},
+{q:"某種激素不足時，身體利用能量的速度可能下降。最可能是哪一種？",o:["甲狀腺素","胰島素","生長激素"],a:0,e:"甲狀腺素不足可能使新陳代謝減慢。實際症狀仍需由醫師評估。"},
+{q:"胰島素的作用最接近下列哪個描述？",o:["讓骨骼快速變長","調整新陳代謝速度","協助細胞利用葡萄糖、降低血糖"],a:2,e:"胰島素協助細胞利用葡萄糖，並促進葡萄糖儲存，因此能降低血糖。"}
+]},
+{title:"第三關：人體故障診斷室",desc:"判斷激素分泌過多或不足可能造成的影響！",icon:"🩺",tag:"故障診斷",points:15,questions:[
+{q:"兒童時期若生長激素分泌不足，可能出現哪種情況？",o:["生長遲緩","身體代謝一定加快","血糖一定升高"],a:0,e:"兒童時期生長激素不足可能造成生長遲緩，俗稱侏儒症。實際身高也受其他因素影響。"},
+{q:"兒童時期若生長激素分泌過多，可能造成？",o:["甲狀腺腫大","巨人症","低血糖"],a:1,e:"兒童時期生長激素分泌過多，可能造成巨人症。"},
+{q:"甲狀腺素分泌不足時，身體新陳代謝通常會如何？",o:["變慢","變快","完全停止"],a:0,e:"甲狀腺素不足常使新陳代謝減慢。"},
+{q:"甲狀腺素分泌過多時，可能出現哪種現象？",o:["代謝變慢、怕冷","身高一定停止生長","代謝過快、心跳可能加快"],a:2,e:"甲狀腺素過多可能使代謝加快，出現怕熱、心悸、流汗增加等情形。"},
+{q:"胰島素分泌不足或作用異常，可能造成哪種結果？",o:["血糖偏高","血糖一定歸零","骨骼快速變長"],a:0,e:"胰島素不足或作用異常，可能使血糖無法有效降低，造成高血糖。"},
+{q:"若胰島素作用過強，血糖可能出現什麼變化？",o:["血糖升高","血糖降低過多","新陳代謝完全停止"],a:1,e:"胰島素會降低血糖，若作用過強可能造成低血糖。這是概念情境，不能單憑症狀自行診斷。"}
+]},
+{title:"第四關：終極人體搶救",desc:"混合題挑戰！答對所有觀念，完成最終修復！",icon:"🚨",tag:"終極挑戰",points:15,questions:[
+{q:"下列哪一組「激素—功能」配對正確？",o:["生長激素—降低血糖","甲狀腺素—調節新陳代謝","胰島素—促進骨骼生長"],a:1,e:"甲狀腺素調節新陳代謝；生長激素促進生長；胰島素幫助降低血糖。"},
+{q:"下列哪一個敘述正確？",o:["胰島素能降低血糖","甲狀腺素由胰島分泌","生長激素主要由甲狀腺分泌"],a:0,e:"胰島素由胰島分泌，能幫助細胞利用葡萄糖，使血糖降低。"},
+{q:"小明說：「激素只在分泌它的器官附近作用，不會影響身體其他地方。」這句話正確嗎？",o:["正確","錯誤"],a:1,e:"激素通常會隨血液運送到身體各處，作用於具有相應反應能力的目標細胞或器官。"},
+{q:"下列哪一項最能說明激素對人體的重要性？",o:["只負責讓人感到飢餓","能調節生長、代謝及血糖等生理活動","只在運動時才會分泌"],a:1,e:"激素能協調並調節多種生理活動，幫助維持身體正常運作。"},
+{q:"小美看到「胰島素可以升高血糖」的說法，應該如何判斷？",o:["正確，胰島素會升高血糖","錯誤，胰島素主要使血糖降低","正確，胰島素與血糖無關"],a:1,e:"胰島素主要使血糖降低；另一種激素「升糖素」則能提高血糖。"},
+{q:"最後一題：三種激素的功能，哪一個整理完全正確？",o:["生長激素—生長；甲狀腺素—代謝；胰島素—降低血糖","生長激素—血糖；甲狀腺素—長高；胰島素—代謝","三種激素功能完全相同"],a:0,e:"恭喜！記住三個關鍵字：生長激素＝生長、甲狀腺素＝代謝、胰島素＝降低血糖。"}
+]}
+];
+let stageIndex=0,qIndex=0,score=0,answered=false,missed=[],selected=-1;
+function showRules(){const r=document.getElementById('rules');r.style.display=r.style.display==='none'?'block':'none'}
+function startGame(){document.getElementById('intro').style.display='none';document.getElementById('result').style.display='none';document.getElementById('game').classList.add('active');stageIndex=0;qIndex=0;score=0;missed=[];render()}
+function render(){
+ const s=stages[stageIndex],q=s.questions[qIndex],total=stages.reduce((n,x)=>n+x.questions.length,0),done=stages.slice(0,stageIndex).reduce((n,x)=>n+x.questions.length,0)+qIndex;
+ document.getElementById('score').textContent=score;document.getElementById('stageNum').textContent=stageIndex+1;document.getElementById('stageIcon').textContent=s.icon;document.getElementById('stageTitle').textContent=s.title;document.getElementById('stageDesc').textContent=s.desc;document.getElementById('qCount').textContent=`本關第 ${qIndex+1} / ${s.questions.length} 題`;document.getElementById('qTag').textContent=s.tag;document.getElementById('qText').textContent=q.q;document.getElementById('qHint').style.display='none';document.getElementById('feedback').className='feedback';document.getElementById('feedback').textContent='';document.getElementById('nextBtn').disabled=true;document.getElementById('nextBtn').textContent=qIndex===s.questions.length-1?(stageIndex===3?'查看成果 🏆':'進入下一關 →'):'下一題 →';document.getElementById('progressBar').style.width=(done/total*100)+'%';document.getElementById('timer').textContent='不限時';answered=false;selected=-1;
+ const box=document.getElementById('options');box.innerHTML='';q.o.forEach((opt,i)=>{const b=document.createElement('button');b.className='option';b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span>${opt}`;b.onclick=()=>choose(i);box.appendChild(b)});
+}
+function choose(i){if(answered)return;selected=i;const s=stages[stageIndex],q=s.questions[qIndex],buttons=[...document.querySelectorAll('.option')];answered=true;buttons.forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct');if(j===i&&i!==q.a)b.classList.add('wrong')});const good=i===q.a;if(good){score+=s.points;document.getElementById('score').textContent=score;toast(`答對了！+${s.points} 分 🎉`)}else{missed.push({q:q.q,correct:q.o[q.a]});toast('再記住這個觀念！')};const f=document.getElementById('feedback');f.className='feedback show '+(good?'good':'bad');f.innerHTML=`<b>${good?'✅ 答對了！':'💡 正確答案：'+q.o[q.a]}</b><br>${q.e}`;document.getElementById('nextBtn').disabled=false}
+function nextQuestion(){if(!answered)return;const s=stages[stageIndex];if(qIndex<s.questions.length-1){qIndex++;render()}else if(stageIndex<stages.length-1){stageIndex++;qIndex=0;render();toast(`🎊 ${stages[stageIndex].title}`)}else{finish()}}
+function skipQuestion(){if(answered){nextQuestion();return}const q=stages[stageIndex].questions[qIndex];missed.push({q:q.q,correct:q.o[q.a]});answered=true;const f=document.getElementById('feedback');f.className='feedback show bad';f.innerHTML=`已跳過。正確答案：<b>${q.o[q.a]}</b><br>${q.e}`;document.querySelectorAll('.option').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct')});document.getElementById('nextBtn').disabled=false}
+function finish(){document.getElementById('game').classList.remove('active');document.getElementById('result').style.display='block';document.getElementById('finalScore').textContent=score;const max=stages.reduce((n,s)=>n+s.questions.length*s.points,0),pct=score/max;document.getElementById('rank').textContent=pct>=.9?'🌟 人體激素首席專家！太厲害了！':pct>=.7?'👏 人體健康偵探！觀念掌握得很好！':pct>=.5?'💪 救援任務完成！再複習一次會更棒！':'📚 繼續練習，你一定能成為激素小專家！';document.getElementById('progressBar').style.width='100%';}
+function restart(){document.getElementById('result').style.display='none';document.getElementById('intro').style.display='block';document.getElementById('game').classList.remove('active');}
+let toastTimer;function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),1600)}
+</script>
+</body>
+</html>
